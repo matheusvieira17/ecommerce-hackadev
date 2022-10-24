@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import './Carousel.css'
+import { useEffect, useState, useRef } from "react";
+import "./Carousel.css";
 
 const Carousel = () => {
+  const scroolCarousel = useRef(null);
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://api-ecommerce-hackadev.herokuapp.com/product_all")
@@ -9,11 +10,21 @@ const Carousel = () => {
       .then(setData);
   }, []);
 
+  const handleLeftClick = (event) => {
+    event.preventDefault();
+    scroolCarousel.current.scrollLeft -= scroolCarousel.current.offsetWidth;
+  };
+
+  const handleRightClick = (event) => {
+    event.preventDefault();
+    scroolCarousel.current.scrollLeft += scroolCarousel.current.offsetWidth;
+  };
+
   return (
     <>
-      <h2> Confira nossos outros produtos </h2>
+      <h2> Confira nossos outros produtos! </h2>
       <main className="container">
-        <section className="carousel">
+        <section className="carousel" ref={scroolCarousel}>
           {data.map((product) => {
             const { product_name, id_product, product_price } = product;
             return (
@@ -33,6 +44,16 @@ const Carousel = () => {
           })}
         </section>
       </main>
+
+      <div className="buttons">
+        <button onClick={handleLeftClick}>
+          <img src="/images/seta.png" alt="Seta para a esquerda" />
+        </button>
+
+        <button onClick={handleRightClick}>
+          <img src="/images/seta.png" alt="Seta para a direita" />
+        </button>
+      </div>
     </>
   );
 };

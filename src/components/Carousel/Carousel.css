@@ -9,11 +9,16 @@ h2 {
     scroll-behavior: smooth;
 }
 
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
 .infos {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center; 
     display: flex;
     flex-direction: column;
-    text-align: center;
-    font-size: 1.5rem;
 }
 
 .infos span:nth-child(2) {
@@ -26,4 +31,33 @@ h2 {
     background-color: white;
     object-fit: cover;
     margin: 5px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    background-color: transparent;
+    border: none; 
+}
+
+.buttons button img {
+   width: 24px;
+   height: 24px;
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+}
+
+.buttons button:first-child {
+    transform: rotate(180deg);
+}
+
+.buttons button img:active {
+    transform: scale(1.05);
 }
