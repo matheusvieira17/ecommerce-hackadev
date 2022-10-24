@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './Carousel.css'
 
 const Carousel = () => {
   const [data, setData] = useState([]);
@@ -19,13 +20,13 @@ const Carousel = () => {
               <>
                 <div className="item" key={id_product}>
                   <div className="image">
-                    <img 
-                    src={`/images/product${id_product}.png`} alt="" />
+                    <img src={`/images/product${id_product}.png`} alt="" />
                   </div>
-                </div>
-                <div className="infos">
-                  <span className="name"> {product_name} </span>
-                  <span className="price"> R$ {product_price}</span>
+
+                  <div className="infos">
+                    <span className="name"> {product_name} </span>
+                    <span className="price"> R${product_price}</span>
+                  </div>
                 </div>
               </>
             );

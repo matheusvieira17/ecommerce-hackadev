@@ -1,0 +1,29 @@
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.infos span:nth-child(2) {
+    font-weight: bold;
+    color: #c03939;
+}
+.image img {
+    width: 210px;
+    height: 210px;
+    background-color: white;
+    object-fit: cover;
+    margin: 5px;
+}
