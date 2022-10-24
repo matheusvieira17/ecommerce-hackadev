@@ -23,7 +23,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
       !address.pin_code ||
       !address.city
     ) {
-      alert('Todos so campos são obrigatórios');
+      alert('Todos os campos são obrigatórios');
     } else {
       addAddress(address);
       setAddress(blanck_address);
@@ -154,7 +154,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
               <div className="flex">
                 <div className="inputBox">
                   <button className="submit-btn btn" type="submit">
-                    Cadastrar Endereço
+                    Cadastrar
                   </button>
                 </div>
               </div>

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import '../styles/product-details.css';
+import { Link } from "react-router-dom";
+import "../styles/product-details.css";
+import Carousel from "./Carousel/Carousel";
 
 const ProductDetails = ({ product, addToCart }) => {
   return (
@@ -7,39 +8,48 @@ const ProductDetails = ({ product, addToCart }) => {
       <div className="details container-b">
         <div className="left image-container">
           <div className="main">
-            <img src={`/images/product${product.id_product}.png`} alt="Imagem do produto" />
+            <img
+              src={`/images/product${product.id_product}.png`}
+              alt="Imagem do produto"
+            />
           </div>
         </div>
         <div className="right">
           <span>{product.category_name}</span>
           <h1>{product.product_name}</h1>
-          <p className="rating">Avaliações: {[...Array(product.product_rating)].map(() => (
-                                                      <i className="bx bxs-star"></i>
-                                            ))}
+          <p className="rating">
+            Avaliações:{" "}
+            {[...Array(product.product_rating)].map(() => (
+              <i className="bx bxs-star"></i>
+            ))}
           </p>
           <div className="price">
-            <p>Preço: {product.product_price.toLocaleString('pt-br', {
-                                            style: 'currency',
-                                            currency: 'BRL',
-                      })}
+            <p>
+              Preço:{" "}
+              {product.product_price.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
             </p>
           </div>
           <form>
-            {product.product_size
-            ?
-            <div>
+            {product.product_size ? (
+              <div>
                 {[...Array(product.product_size.length)].map(() => (
-                    <div>{product.size_name}</div>
+                  <div>{product.size_name}</div>
                 ))}
-            </div>
-            : 
-            <div></div>
-            }
-            
+              </div>
+            ) : (
+              <div></div>
+            )}
           </form>
           <form className="form">
-            <input type="number" value="1"/>
-            <button type="button" className="addCart" onClick={() => addToCart(product)}>
+            <input type="number" value="1" />
+            <button
+              type="button"
+              className="addCart"
+              onClick={() => addToCart(product)}
+            >
               Comprar
             </button>
             <Link to="/cart" className="addCart">
@@ -54,6 +64,8 @@ const ProductDetails = ({ product, addToCart }) => {
           </p>
         </div>
       </div>
+
+      <Carousel/>
     </section>
   );
 };
