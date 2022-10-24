@@ -1,18 +1,35 @@
+import { useEffect, useState } from "react";
+
 const Carousel = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("https://api-ecommerce-hackadev.herokuapp.com/product_all")
+      .then((response) => response.json())
+      .then(setData);
+  }, []);
+
   return (
     <>
       <h2> Confira nossos outros produtos </h2>
       <main className="container">
         <section className="carousel">
-          <div className="item">
-            <div className="img">
-              <img src="" alt="" />
-            </div>
-          </div>
-          <div className="infos">
-            <span className="name"> Camisa </span>
-            <span className="price"> R$ 100</span>
-          </div>
+          {data.map((product) => {
+            const { product_name, id_product, product_price } = product;
+            return (
+              <>
+                <div className="item" key={id_product}>
+                  <div className="image">
+                    <img 
+                    src={`/images/product${id_product}.png`} alt="" />
+                  </div>
+                </div>
+                <div className="infos">
+                  <span className="name"> {product_name} </span>
+                  <span className="price"> R$ {product_price}</span>
+                </div>
+              </>
+            );
+          })}
         </section>
       </main>
     </>
