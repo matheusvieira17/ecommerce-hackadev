@@ -27,6 +27,8 @@ const Carousel = () => {
         <section className="carousel" ref={scroolCarousel}>
           {data.map((product) => {
             const { product_name, id_product, product_price } = product;
+            const formattedPrice = product_price.toFixed(2).
+            replace(".", ",")
             return (
               <>
                 <div className="item" key={id_product}>
@@ -36,7 +38,7 @@ const Carousel = () => {
 
                   <div className="infos">
                     <span className="name"> {product_name} </span>
-                    <span className="price"> R${product_price}</span>
+                    <span className="price"> R${formattedPrice}</span>
                   </div>
                 </div>
               </>
