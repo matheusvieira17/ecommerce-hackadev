@@ -31,8 +31,14 @@ h2 {
     background-color: white;
     object-fit: cover;
     margin: 5px;
+    cursor: pointer;
 }
 
+.image img:hover{
+    transform: filter 0.2s;
+    transition: ease-in-out 0.4s;
+    filter: brightness(0.9);
+}
 .buttons {
     display: flex;
     align-items: center;
