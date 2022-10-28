@@ -1,7 +1,7 @@
-import '../styles/navbar.css';
-import { Link } from 'react-router-dom';
-import NavInput from './NavInput';
-import { useSelector } from 'react-redux';
+import "../styles/navbar.css";
+import { Link } from "react-router-dom";
+import NavInput from "./NavInput";
+import { useSelector } from "react-redux";
 
 const NavBar = ({ setInclude }) => {
   const cartItems = useSelector((state) => state.cart.items);

@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import '../styles/checkout.css';
+import { useState } from "react";
+import "../styles/checkout.css";
 
 const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
   const blanck_address = {
-    full_name: '',
-    address: '',
-    number: '',
-    pin_code: '',
-    city: '',
-    state: '',
-    phone: '',
+    full_name: "",
+    address: "",
+    number: "",
+    pin_code: "",
+    city: "",
+    state: "",
+    phone: "",
   };
   const [address, setAddress] = useState({ blanck_address });
 
@@ -23,7 +23,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
       !address.pin_code ||
       !address.city
     ) {
-      alert('Todos os campos são obrigatórios');
+      alert("Todos os campos são obrigatórios");
     } else {
       addAddress(address);
       setAddress(blanck_address);
@@ -47,7 +47,7 @@ const Checkout = ({ user, addAddress, setShipAddress, placeOrder }) => {
                 <div className="address">
                   <p>{address.full_name}</p>
                   <p>
-                    {address.address}, {address.number}, {address.pin_code},{' '}
+                    {address.address}, {address.number}, {address.pin_code},{" "}
                     {address.city}, {address.state}
                   </p>
                   <p>{address.phone}</p>

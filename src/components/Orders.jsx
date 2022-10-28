@@ -1,4 +1,4 @@
-import '../styles/orders.css';
+import "../styles/orders.css";
 
 const Orders = ({ items, order }) => {
   const total_orders =
@@ -24,15 +24,15 @@ const Orders = ({ items, order }) => {
             ))}
             <span>
               Total:
-              {total_orders.toLocaleString('pt-br', {
-                style: 'currency',
-                currency: 'BRL',
+              {total_orders.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
               })}
             </span>
             <p className="show-address">
-              Endereço: {order.shipping_address.full_name},{' '}
-              {order.shipping_address.address}, {order.shipping_address.number},{' '}
-              {order.shipping_address.pin_code}, {order.shipping_address.city},{' '}
+              Endereço: {order.shipping_address.full_name},{" "}
+              {order.shipping_address.address}, {order.shipping_address.number},{" "}
+              {order.shipping_address.pin_code}, {order.shipping_address.city},{" "}
               {order.shipping_address.state}
             </p>
             <hr />

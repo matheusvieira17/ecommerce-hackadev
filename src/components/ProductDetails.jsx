@@ -65,7 +65,7 @@ const ProductDetails = ({ product, addToCart }) => {
         </div>
       </div>
 
-      <Carousel/>
+      <Carousel />
     </section>
   );
 };
