@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./Carousel.css";
 
-const Carousel = () => {
+const Carousel = ({idCategory, idProduto}) => {
   const scroolCarousel = useRef(null);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -20,16 +20,26 @@ const Carousel = () => {
     scroolCarousel.current.scrollLeft += scroolCarousel.current.offsetWidth;
   };
 
+  const produtosFiltrados = data
+    .filter((product) => product.product_category === idCategory 
+    && product.id_product !== (idProduto) )
+    .slice(0, 5);
+
+  // const produtosFiltrados2 = data
+  //   .filter((product) => product.product_category === "ACESSÓRIOS")
+  //   .slice(0, 5);
+
   return (
     <>
       <h2> Confira nossos outros produtos! </h2>
       <main className="container">
         <section className="carousel" ref={scroolCarousel}>
-          {data.map((product) => {
-            const { product_name, id_product, product_price } = product;
-            const formattedPrice = product_price.toFixed(2).
-            replace(".", ",")
-            return (
+          {produtosFiltrados.map((product) => {
+            const { product_name, id_product, product_price} = product;
+            const formattedPrice = product_price.toFixed(2)
+            .replace(".", ",");
+
+              return (
               <>
                 <div className="item" key={id_product}>
                   <div className="image">
@@ -38,12 +48,12 @@ const Carousel = () => {
 
                   <div className="infos">
                     <span className="name"> {product_name} </span>
-                    <span className="price"> R${formattedPrice}</span>
+                    <span className="price"> R${formattedPrice} </span>
                   </div>
                 </div>
               </>
-            );
-          })}
+            )}  
+          )}
         </section>
       </main>
 

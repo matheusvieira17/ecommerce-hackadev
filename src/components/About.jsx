@@ -34,7 +34,7 @@ const AboutPage = () => {
           <br></br>
           <span className="about-text">
             Navegue pela nossa plataforma, confira as coleções e promoções, e
-            seja mais um Dev feliz e realizado que foi tocado pela da DevModas!!{" "}
+            seja mais um Dev feliz e realizado que foi tocado pela  DevModas!!{" "}
           </span>
         </div>
       </div>

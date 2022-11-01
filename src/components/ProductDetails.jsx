@@ -65,7 +65,9 @@ const ProductDetails = ({ product, addToCart }) => {
         </div>
       </div>
 
-      <Carousel />
+      <Carousel 
+      idProduto={product.id_product}
+      idCategory={product.id_category}/>
     </section>
   );
 };
