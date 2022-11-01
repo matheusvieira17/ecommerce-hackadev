@@ -25,10 +25,6 @@ const Carousel = ({idCategory, idProduto}) => {
     && product.id_product !== (idProduto) )
     .slice(0, 5);
 
-  // const produtosFiltrados2 = data
-  //   .filter((product) => product.product_category === "ACESSÓRIOS")
-  //   .slice(0, 5);
-
   return (
     <>
       <h2> Confira nossos outros produtos! </h2>
