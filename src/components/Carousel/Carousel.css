@@ -21,9 +21,13 @@ h2 {
     flex-direction: column;
 }
 
+.infos span:nth-child(1) {
+    text-transform: uppercase;
+}
+
 .infos span:nth-child(2) {
     font-weight: bold;
-    color: #c03939;
+    color: #171717;
 }
 .image img {
     width: 210px;
