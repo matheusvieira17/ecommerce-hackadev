@@ -1,5 +1,7 @@
 h2 {
-    margin-top: 20px;
+    
+    margin-top:30px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -32,17 +34,11 @@ h2 {
 .image img {
     width: 210px;
     height: 210px;
-    background-color: white;
     object-fit: cover;
     margin: 5px;
     cursor: pointer;
 }
 
-.image img:hover{
-    transform: filter 0.2s;
-    transition: ease-in-out 0.4s;
-    filter: brightness(0.9);
-}
 .buttons {
     display: flex;
     align-items: center;

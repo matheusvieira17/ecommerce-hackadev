@@ -23,7 +23,7 @@ const Carousel = ({idCategory, idProduto}) => {
   const produtosFiltrados = data
     .filter((product) => product.product_category === idCategory 
     && product.id_product !== (idProduto) )
-    .slice(0, 5);
+    .slice(0, 10);
 
   return (
     <>
